@@ -37,6 +37,8 @@ class ECGFeaturesExtractor:
         in_between_peaks = False
         for sample_index in range(0, len(detected_qrs)):
             label = detected_qrs[sample_index,1]
+            print("label = ", label)
+            print("mag = ", detected_qrs[sample_index,0])
             if int(label) == IS_QRS_PEAK:
                 self.R_magnitude_vector.append(detected_qrs[sample_index,0])
                 self.num_heart_beats += 1
