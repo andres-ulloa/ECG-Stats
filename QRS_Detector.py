@@ -133,8 +133,7 @@ class QRSDetectorOffline(object):
         Method loading ECG data set from a JSON string
         """
         dict = json.loads(self.ecg_data_json)
-        print(self.ecg_data_json)
-        self.ecg_data_raw = np.array(dict["signal"])
+        self.ecg_data_raw = np.array(dict["signal"], dtype = float)
     
 
 

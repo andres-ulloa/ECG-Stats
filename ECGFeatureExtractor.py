@@ -107,7 +107,6 @@ def load_two_column_file(path):
 
 
 if __name__ == "__main__":
-    arg_ecg_data = json.loads(arg_ecg_data)
     sys.stdout.write(run_feature_extraction(arg_ecg_data, arg_samples_per_sec, arg_num_samples))
     sys.exit(0)
     """ecg_data = load_two_column_file("ecg_data_2.csv")
