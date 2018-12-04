@@ -38,6 +38,7 @@ class ECGFeaturesExtractor:
         for sample_index in range(0, len(detected_qrs)):
             label = detected_qrs[sample_index,1]
             if int(label) == IS_QRS_PEAK:
+                print('inside')
                 self.R_magnitude_vector.append(detected_qrs[sample_index,0])
                 self.num_heart_beats += 1
                 if in_between_peaks == False:
