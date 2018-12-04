@@ -5,8 +5,8 @@ import json
 import sys
 
 arg_ecg_data = sys.argv[1]
-arg_samples_per_sec = sys.argv[2]
-arg_num_samples = sys.argv[3]
+arg_samples_per_sec = int(sys.argv[2])
+arg_num_samples = int(sys.argv[3])
 
 
 class ECGFeaturesExtractor:
