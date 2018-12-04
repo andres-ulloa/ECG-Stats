@@ -37,9 +37,6 @@ class ECGFeaturesExtractor:
         in_between_peaks = False
         for sample_index in range(0, len(detected_qrs)):
             label = detected_qrs[sample_index,1]
-            if label != 0:
-                print("label = ", label)
-                print("mag = ", detected_qrs[sample_index,0])
             if int(label) == IS_QRS_PEAK:
                 self.R_magnitude_vector.append(detected_qrs[sample_index,0])
                 self.num_heart_beats += 1
@@ -56,7 +53,6 @@ class ECGFeaturesExtractor:
     def generate_features_vector(self):
         detector = QRS.QRSDetectorOffline(self.json_ecg_data)
         detected_qrs = detector.get_detected_ecg_peaks()
-        print(detected_qrs)
         self.extract_R_peak_features(detected_qrs)
         mean_RR_interval = self.compute_mean(self.RR_interval_list)
         beats_per_min = self.FULL_MIN/mean_RR_interval
