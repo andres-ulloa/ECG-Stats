@@ -206,8 +206,6 @@ class QRSDetectorOffline(object):
         measurement_qrs_detection_flag = np.zeros([len(self.ecg_data_raw), 1])
         measurement_qrs_detection_flag[self.qrs_peaks_indices] = 1
         self.ecg_data_raw = np.expand_dims(self.ecg_data_raw, axis = 1)
-        print('shape raw = ', self.ecg_data_raw.shape)
-        print('shape_flag = ',  measurement_qrs_detection_flag.shape)
         self.ecg_data_detected = np.append(self.ecg_data_raw, measurement_qrs_detection_flag, 1)
         """Results reporting methods."""
 

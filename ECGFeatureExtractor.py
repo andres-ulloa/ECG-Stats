@@ -55,8 +55,6 @@ class ECGFeaturesExtractor:
         detected_qrs = detector.get_detected_ecg_peaks()
         self.extract_R_peak_features(detected_qrs)
         mean_RR_interval = self.compute_mean(self.RR_interval_list)
-        print("RR intervals = ", self.RR_interval_list)
-        print("R mags = ", self.R_magnitude_vector)
         beats_per_min = self.FULL_MIN/mean_RR_interval
         features = {}
         features["max_mag"] = self.get_max_ECG_magnitude()
@@ -107,8 +105,7 @@ def load_two_column_file(path):
 
 
 if __name__ == "__main__":
-    sys.stdout.write(run_feature_extraction(arg_ecg_data, arg_samples_per_sec, arg_num_samples))
-    sys.exit(0)
+    print(run_feature_extraction(arg_ecg_data, arg_samples_per_sec, arg_num_samples))
     """ecg_data = load_two_column_file("ecg_data_2.csv")
     json_ecg_data = to_json(ecg_data)
     print(run_feature_extraction(json_ecg_data, 250, 935))
