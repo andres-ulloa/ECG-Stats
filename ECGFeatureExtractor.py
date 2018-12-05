@@ -22,7 +22,7 @@ class ECGFeaturesExtractor:
         self.num_heart_beats = 0
         self.R_magnitude_vector = list()
         self.num_samples = num_samples
-        self.FULL_MIN = 60000
+        self.FULL_MIN = 60
 
         if samples_per_sec != 0: 
             self.sampling_frecuency = 1/samples_per_sec 
